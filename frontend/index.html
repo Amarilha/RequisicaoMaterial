@@ -8,19 +8,15 @@
 </head>
 <body class="bg-gray-900 flex items-center justify-center min-h-screen">
     <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h1 class="text-white text-2xl font-bold mb-4">Requisição de Materiais</h1>
+        <div class="flex justify-center mb-4">
+            <img alt="Blue logo in the center"  src="/frontend/public/Jefer_Logo_25anos_Branco_vetor.svg" width="240"/>
+           </div>
+        <h1  class="text-gray-400 text-2xl font-bold mb-4 text-center" >Requisição de Materiais</h1>
         <form>
             <div class="mb-4">
-                <label class="block text-gray-300 mb-2" for="Setor">Setor</label>
-                <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="titles" id="Setor" placeholder="Pesquisa o Setor">
-                <datalist id="titles">
-                    <option value="A Night in the Forest">
-                    <option value="Flying Over Cities">
-                    <option value="Chased by Shadows">
-                    <option value="Lost in a Maze">
-                    <option value="Meeting a Stranger">
-                    <option value="Other">
-                </datalist>
+                <label class="block text-gray-300 mb-2" for="setor">Setor</label>
+                <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="setores" id="setor" placeholder="Pesquisa o Setor">
+                <datalist id="setores"></datalist>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-300 mb-2" for="material">Material</label>
@@ -42,14 +38,7 @@
                 <div class="w-1/2">
                     <label class="block text-gray-300 mb-2" for="maquina">Maquina</label>
                     <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="maquinas"  id="maquina" placeholder="Maquina">
-                    <datalist id="maquinas">
-                        <option value="Flying">
-                        <option value="Falling">
-                        <option value="Being Chased">
-                        <option value="Feeling Lost">
-                        <option value="Meeting Someone">
-                        <option value="Other">
-                    </datalist>
+                    <datalist id="maquinas"></datalist>
                 </div>
                 <div class="w-1/2">
                     <label class="block text-gray-300 mb-2" for="solicitante">Solicitante</label>
@@ -65,16 +54,9 @@
                 </div>
             </div>
             <div class="mb-4">
-                <label class="block text-gray-300 mb-2" for="Generate">Generate</label>
-                <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="Generates" id="Generate" placeholder="Generate">
-                <datalist id="Generates">
-                    <option value="Flying">
-                    <option value="Falling">
-                    <option value="Being Chased">
-                    <option value="Feeling Lost">
-                    <option value="Meeting Someone">
-                    <option value="Other">
-                </datalist>
+                <label class="block text-gray-300 mb-2" for="gerente">Gerente</label>
+                <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="gerentes" id="gerente" placeholder="Gerente">
+                <datalist id="gerentes"></datalist>
             </div>
 
             <div class="mb-4">
@@ -86,5 +68,5 @@
         </form>
     </div>
 </body>
-<script  src="/frontend/src/js/index.js"></script>
+<script type="module" src="/frontend/src/js/index.js"></script>
 </html>
