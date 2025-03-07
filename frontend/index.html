@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Story Maker Dream Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/frontend/src/styles/index.css">
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-white text-2xl font-bold mb-4">Requisição de Materiais</h1>
+        <form>
+            <div class="mb-4">
+                <label class="block text-gray-300 mb-2" for="Setor">Setor</label>
+                <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="titles" id="Setor" placeholder="Pesquisa o Setor">
+                <datalist id="titles">
+                    <option value="A Night in the Forest">
+                    <option value="Flying Over Cities">
+                    <option value="Chased by Shadows">
+                    <option value="Lost in a Maze">
+                    <option value="Meeting a Stranger">
+                    <option value="Other">
+                </datalist>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-300 mb-2" for="material">Material</label>
+                <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="Materiais" id="material" placeholder="Pesquisa os Materiais">
+                <datalist id="Materiais">
+                    <option value="Flying">
+                    <option value="Falling">
+                    <option value="Being Chased">
+                    <option value="Feeling Lost">
+                    <option value="Meeting Someone">
+                    <option value="Other">
+                </datalist>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-300 mb-2" for="description">Description</label>
+                <div id="description" class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600 min-h-[3rem]"></div>
+            </div>
+            <div class="mb-4 flex space-x-4">
+                <div class="w-1/2">
+                    <label class="block text-gray-300 mb-2" for="maquina">Maquina</label>
+                    <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="maquinas"  id="maquina" placeholder="Maquina">
+                    <datalist id="maquinas">
+                        <option value="Flying">
+                        <option value="Falling">
+                        <option value="Being Chased">
+                        <option value="Feeling Lost">
+                        <option value="Meeting Someone">
+                        <option value="Other">
+                    </datalist>
+                </div>
+                <div class="w-1/2">
+                    <label class="block text-gray-300 mb-2" for="solicitante">Solicitante</label>
+                    <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="solicitantes" id="solicitante" placeholder="Solicitante">
+                    <datalist id="solicitantes">
+                        <option value="Flying">
+                        <option value="Falling">
+                        <option value="Being Chased">
+                        <option value="Feeling Lost">
+                        <option value="Meeting Someone">
+                        <option value="Other">
+                    </datalist>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-300 mb-2" for="Generate">Generate</label>
+                <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="Generates" id="Generate" placeholder="Generate">
+                <datalist id="Generates">
+                    <option value="Flying">
+                    <option value="Falling">
+                    <option value="Being Chased">
+                    <option value="Feeling Lost">
+                    <option value="Meeting Someone">
+                    <option value="Other">
+                </datalist>
+            </div>
+
+            <div class="mb-4">
+                <button class="w-full p-2 rounded bg-teal-500 text-white font-bold">Generate</button>
+            </div>
+            <div>
+                <textarea class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" rows="4" placeholder="Your AI-generated story will appear here" readonly></textarea>
+            </div>
+        </form>
+    </div>
+</body>
+<script  src="/frontend/src/js/index.js"></script>
+</html>

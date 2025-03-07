@@ -1,0 +1,17 @@
+.tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #2d3748;
+    color: #a0aec0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.tag button {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
