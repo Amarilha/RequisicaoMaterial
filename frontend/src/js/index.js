@@ -9,7 +9,9 @@ function removeTag(button) {
         tag.remove(); // Remove a tag
     }
 }
-
+// Array para armazenar os materiais selecionados
+let materiaisSelecionados = [];
+//tag
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('material').addEventListener('change', function () {
         const selectedValue = this.value;
@@ -30,16 +32,65 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>`;
             descriptionDiv.appendChild(tag);
             this.value = ''; // Limpa o campo de seleção após adicionar a tag
+
+            // Adiciona o material ao array
+            materiaisSelecionados.push(selectedValue);
            
             // Adiciona o evento de clique ao botão "X"
             const removeButton = tag.querySelector('button');
             removeButton.addEventListener('click', function () {
                 removeTag(this);
+                // Remove o material do array quando a tag é removida
+                const materialRemovido = this.closest('.tag').textContent.trim().split('\n')[0];
+                materiaisSelecionados = materiaisSelecionados.filter(mat => mat !== materialRemovido);
             });
             }
     });
 });
 
+//get valores
+function getDescricaoFormatada() {
+    const descriptionDiv = document.getElementById('description');
+    const tags = descriptionDiv.querySelectorAll('.tag');
+    let descricao = '';
+
+    tags.forEach(tag => {
+        const material = tag.textContent.trim().split('\n')[0]; // Pega o nome do material
+        const quantidade = tag.querySelector('input').value; // Pega a quantidade
+        descricao += `${material} (Quantidade: ${quantidade})\n`; // Formata a descrição
+    });
+
+    return descricao.trim(); // Remove espaços em branco no final
+}
+//imprime o valor 
+document.addEventListener('DOMContentLoaded', () => {
+    const botaoSolicitar = document.getElementById('Solicitar');
+
+    botaoSolicitar.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Captura os valores dos campos do formulário
+        const setor = document.getElementById('setor').value;
+        const descricao = getDescricaoFormatada(); // Descrição formatada
+        const maquina = document.getElementById('maquina').value;
+        const solicitante = document.getElementById('solicitante').value;
+        const gerente = document.getElementById('gerente').value;
+
+        // Exibe os valores no console
+        console.log('Setor:', setor);
+        console.log('Materiais Selecionados:', materiaisSelecionados); // Exibe os materiais selecionados
+        console.log('Descrição:', descricao);
+        console.log('Máquina:', maquina);
+        console.log('Solicitante:', solicitante);
+        console.log('Gerente:', gerente);
+
+        // Exibe uma mensagem de sucesso no console
+        console.log('Formulário enviado com sucesso!');
+    });
+});
+
+
+//carrega db
 function carregarSetores() {
     const setorRef = ref(db, "setor");
     console.log(setorRef);
