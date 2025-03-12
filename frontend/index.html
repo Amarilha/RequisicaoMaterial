@@ -13,27 +13,24 @@
            </div>
         <h1  class="text-gray-400 text-2xl font-bold mb-4 text-center" >Requisição de Materiais</h1>
         <form>
+            
             <div class="mb-4">
                 <label class="block text-gray-300 mb-2" for="setor">Setor</label>
                 <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="setores" id="setor" placeholder="Pesquisa o Setor">
                 <datalist id="setores"></datalist>
             </div>
+
             <div class="mb-4">
                 <label class="block text-gray-300 mb-2" for="material">Material</label>
-                <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="Materiais" id="material" placeholder="Pesquisa os Materiais">
-                <datalist id="Materiais">
-                    <option value="Flying">
-                    <option value="Falling">
-                    <option value="Being Chased">
-                    <option value="Feeling Lost">
-                    <option value="Meeting Someone">
-                    <option value="Other">
-                </datalist>
+                <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="materiais" id="material" placeholder="Pesquisa os Materiais">
+                <datalist id="materiais"></datalist>
             </div>
+
             <div class="mb-4">
                 <label class="block text-gray-300 mb-2" for="description">Description</label>
                 <div id="description" class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600 min-h-[3rem]"></div>
             </div>
+
             <div class="mb-4 flex space-x-4">
                 <div class="w-1/2">
                     <label class="block text-gray-300 mb-2" for="maquina">Maquina</label>
@@ -53,6 +50,7 @@
                     </datalist>
                 </div>
             </div>
+
             <div class="mb-4">
                 <label class="block text-gray-300 mb-2" for="gerente">Gerente</label>
                 <input class="w-full p-2 rounded bg-gray-700 text-gray-300 border border-gray-600" list="gerentes" id="gerente" placeholder="Gerente">
@@ -67,6 +65,6 @@
             </div>
         </form>
     </div>
+    <script type="module" src="/frontend/src/js/index.js"></script>
 </body>
-<script type="module" src="/frontend/src/js/index.js"></script>
 </html>
