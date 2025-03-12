@@ -40,21 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-//const setorRef = ref(db, "setor");
-//get(setorRef)
-//  .then((snapshot) => {
-//    if (snapshot.exists()) {
-//      console.log(snapshot.val()); // Exibe os dados do setor
-//    } else {
-//      console.log("Nenhum dado disponível em /setor");
-//    }
-//  })
-//  .catch((error) => {
-//    console.error("Erro ao buscar os dados:", error);
-//  });
-
-// Função para carregar os setores
 function carregarSetores() {
     const setorRef = ref(db, "setor");
     console.log(setorRef);
@@ -81,7 +66,6 @@ function carregarSetores() {
             console.error("Erro ao buscar setores:", error);
         });
 }
-
 function carregarGerente() {
     const gerenteRef = ref(db, "gerente");
     console.log(gerenteRef);
@@ -160,6 +144,32 @@ function carregarMaterial() {
             console.error("Erro ao buscar setores:", error);
         });
 }
+function carregarSolicitante() {
+    const solicitanteRef = ref(db, "solicitante");
+    console.log(solicitanteRef);
+    get(solicitanteRef)
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                const solicitante = snapshot.val();
+                const datalistsolicitante = document.getElementById("solicitantes");
+                 
+                console.log(solicitante);
+                console.log(datalistsolicitante);
+
+
+                Object.keys(solicitante).forEach(solicitante => {
+                    const option = document.createElement("option");
+                    option.value = solicitante;  // Pega apenas o número (chave do objeto)
+                    datalistsolicitante.appendChild(option);
+                });
+            } else {
+                console.log("Nenhum setor encontrado.");
+            }
+        })
+        .catch((error) => {
+            console.error("Erro ao buscar setores:", error);
+        });
+}
 
 // Função para carregar tudo
 function carregarTudo() {
@@ -167,8 +177,8 @@ function carregarTudo() {
     carregarGerente();
     carregarMaquinas();
     carregarMaterial();
+    carregarSolicitante();
 
 }
-
 // Chama a função ao carregar a página
 window.onload = carregarTudo;
