@@ -1,0 +1,104 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+   
+</head>
+<body class="bg-[#111827] h-screen flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="bg-gray-800 text-white w-64 rounded-lg shadow-lg flex flex-col transition-all duration-300">
+        <div class="p-4 flex items-center justify-between">
+            <div id="logo" class="flex items-center">
+                <img alt="CodePen logo" class="mr-2" height="40" src="/frontend/public/Jefer_Logo_25anos_Branco_vetor.svg" width="190"/>
+            </div>
+            <button id="toggleSidebar" class="focus:outline-none " style="padding-left: 12px;" >
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        <div id="menuItems" class="pl-4">
+            <ul class="space-y-4">
+                <li class="flex items-center hover:bg-[#111827] p-3 rounded-l-2xl">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    <span class="menu-text">Your Work</span>
+                </li>
+                <li class="flex items-center hover:bg-[#111827] p-3 rounded-l-2xl">
+                    <i class="fas fa-image mr-2"></i>
+                    <span class="menu-text">Assets</span>
+                </li>
+                <li class="flex items-center hover:bg-[#111827] p-3 rounded-l-2xl">
+                    <i class="fas fa-thumbtack mr-2"></i>
+                    <span class="menu-text">Pinned Items</span>
+                </li>
+                <li class="border-t border-gray-600 my-2"></li>
+                <li class="flex items-center hover:bg-[#111827] p-3 rounded-l-2xl">
+                    <i class="fas fa-heart mr-2"></i>
+                    <span class="menu-text">Following</span>
+                </li>
+                <li class="flex items-center hover:bg-[#111827] p-3 rounded-l-2xl">
+                    <i class="fas fa-fire mr-2"></i>
+                    <span class="menu-text">Trending</span>
+                </li>
+                <li class="flex items-center hover:bg-[#111827] p-3 rounded-l-2xl">
+                    <i class="fas fa-trophy mr-2"></i>
+                    <span class="menu-text">Challenges</span>
+                </li>
+                <li class="flex items-center hover:bg-[#111827] p-3 rounded-l-2xl">
+                    <i class="fas fa-bolt mr-2"></i>
+                    <span class="menu-text">Spark</span>
+                </li>
+            </ul>
+        </div>
+        <div id="userSection" class="mt-auto p-4 flex items-center bg-gray-700 rounded-b-lg">
+            <img alt="User avatar" class="rounded-full mr-2" height="40" src="https://storage.googleapis.com/a1aa/image/28g82RKr_BDcU9DSPWSXub19dpingD-P39riEInpi00.jpg" width="40"/>
+            <div class="user-info">
+                <div class="font-bold">uahnbu</div>
+                <div class="text-sm text-gray-400">Admin</div>
+            </div>
+            <i id="userDropdownIcon" class="fas fa-chevron-down ml-auto"></i>
+        </div>
+    </div>
+
+    <!-- Kanban Board -->
+    <div class="flex-1 p-4">
+        <div class="grid grid-cols-3 gap-4">
+            <!-- To Do Column -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-bold">To Do</h2>
+                    <button class="text-blue-500" onclick="addTask('todo')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div id="todo" class="space-y-4">
+                    
+                </div>
+            </div>
+            <!-- In Progress Column -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-bold">In Progress</h2>
+                    <button class="text-blue-500" onclick="addTask('inprogress')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div id="inprogress" class="space-y-4">
+                    
+                </div>
+            </div>
+            <!-- Done Column -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-bold">Done</h2>
+                    <button class="text-blue-500" onclick="addTask('done')">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div id="done" class="space-y-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/frontend/src/js/dashboard.js"></script>
+</body>
+</html>
